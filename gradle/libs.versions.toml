@@ -1,0 +1,20 @@
+[versions]
+
+spring = "3.2.4"
+springDepMan = "1.1.4"
+kotlin = "1.9.23"
+apacheCommonsPool = "2.12.0"
+playwright = "1.42.0"
+
+[libraries]
+
+spring_boot_starter_web = { module = "org.springframework.boot:spring-boot-starter-web" }
+apache_commons_pool = { module = "org.apache.commons:commons-pool2", version.ref="apacheCommonsPool" }
+playwright = { module = "com.microsoft.playwright:playwright", version.ref="playwright" }
+
+[plugins]
+
+spring_boot = { id = "org.springframework.boot", version.ref = "spring" }
+spring_dependency_management = { id = "io.spring.dependency-management", version.ref = "springDepMan" }
+kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin_spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
