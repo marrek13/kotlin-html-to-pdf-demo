@@ -18,13 +18,13 @@ class PlaywrightConfig{
     fun browserContextPool() =
         BrowserContextPool(
             BrowserContextPooledObjectFactory(),
-            GenericObjectPoolConfig<BrowserContext>().also {
-                it.jmxEnabled = false
-                it.minIdle = 5
-                it.maxIdle = 10
-                it.maxTotal = 15
-                it.softMinEvictableIdleDuration = Duration.ofMinutes(3)
-                it.timeBetweenEvictionRuns = Duration.ofSeconds(30)
+            GenericObjectPoolConfig<BrowserContext>().apply {
+                jmxEnabled = false
+                minIdle = 5
+                maxIdle = 10
+                maxTotal = 15
+                softMinEvictableIdleDuration = Duration.ofMinutes(3)
+                timeBetweenEvictionRuns = Duration.ofSeconds(30)
             },
         ).also {
             it.addObjects(it.minIdle)
