@@ -31,6 +31,8 @@ class BrowserContextPooledObjectFactory : PooledObjectFactory<BrowserContext>, A
             for (page in pages) {
                 if (page.isClosed) {
                     continue
+                } else {
+                    page.close()
                 }
             }
         }
